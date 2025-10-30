@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `payerEnrollments` (\n  `id` varchar(255) NOT NULL PRIMARY KEY,\n  `providerId` varchar(255) NOT NULL,\n  `payerName` varchar(255) NOT NULL,\n  `status` enum('active','pending','inactive') NOT NULL DEFAULT 'pending',\n  `enrollmentDate` varchar(20) NOT NULL DEFAULT '',\n  `contractEnd` varchar(20) NOT NULL DEFAULT '',\n  `nextCredentialing` varchar(20) NOT NULL DEFAULT '',\n  `notes` text,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Vy9diodPy4g3MD.root --database CcMHBo8hRNDuEgWUygtZqP --execute CREATE TABLE IF NOT EXISTS `payerEnrollments` (\n  `id` varchar(255) NOT NULL PRIMARY KEY,\n  `providerId` varchar(255) NOT NULL,\n  `payerName` varchar(255) NOT NULL,\n  `status` enum('active','pending','inactive') NOT NULL DEFAULT 'pending',\n  `enrollmentDate` varchar(20) NOT NULL DEFAULT '',\n  `contractEnd` varchar(20) NOT NULL DEFAULT '',\n  `nextCredentialing` varchar(20) NOT NULL DEFAULT '',\n  `notes` text,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 50
+}

@@ -1,0 +1,96 @@
+flowchart TD
+    Start([👤 User Logs In]) --> CheckRole{Check User Role}
+    
+    CheckRole -->|Admin| AdminDash[👑 Admin Dashboard]
+    CheckRole -->|Manager| ManagerDash[✏️ Manager Dashboard]
+    CheckRole -->|Viewer| ViewerDash[👀 Viewer Dashboard]
+    
+    AdminDash --> AdminActions{Admin Actions}
+    ManagerDash --> ManagerActions{Manager Actions}
+    ViewerDash --> ViewerActions{Viewer Actions}
+    
+    AdminActions -->|Manage Users| UserMgmt[🛡️ User Management]
+    AdminActions -->|Manage Providers| ProviderMgmt[📋 Provider Management]
+    AdminActions -->|View Reports| Reports[📊 Reports]
+    AdminActions -->|Delete Data| DeleteOps[🗑️ Delete Operations]
+    
+    ManagerActions -->|Create Provider| CreateProvider[➕ Add Provider]
+    ManagerActions -->|Edit Provider| EditProvider[✏️ Edit Provider]
+    ManagerActions -->|View Reports| Reports
+    ManagerActions -->|Export Data| ExportData[📥 Export CSV]
+    
+    ViewerActions -->|View Providers| ViewProviders[👁️ View Providers]
+    ViewerActions -->|View Reports| Reports
+    ViewerActions -->|Search/Filter| SearchFilter[🔍 Search & Filter]
+    
+    UserMgmt --> ListUsers[📋 List All Users]
+    UserMgmt --> ChangeRole[🔄 Change User Role]
+    UserMgmt --> ViewActivity[📊 View Activity]
+    
+    ChangeRole --> ValidateRole{Self-modification?}
+    ValidateRole -->|Yes| BlockChange[❌ Blocked<br/>Cannot change own role]
+    ValidateRole -->|No| UpdateRole[✅ Role Updated]
+    
+    ProviderMgmt --> SearchProviders[🔍 Search Providers]
+    ProviderMgmt --> FilterProviders[🎯 Filter by Status/Specialty]
+    ProviderMgmt --> PriorityView[🚩 Priority View]
+    
+    CreateProvider --> EnterDetails[📝 Enter Provider Details]
+    EnterDetails --> AddLocations[📍 Add Practice Locations]
+    AddLocations --> AddEnrollments[💳 Add Payer Enrollments]
+    AddEnrollments --> SaveProvider[💾 Save Provider]
+    
+    EditProvider --> SelectProvider[🎯 Select Provider]
+    SelectProvider --> EditMode[✏️ Enter Edit Mode]
+    EditMode --> ModifyDetails[📝 Modify Details]
+    ModifyDetails --> UpdateEnrollments[💳 Update Enrollments]
+    UpdateEnrollments --> SaveChanges[💾 Save Changes]
+    
+    ViewProviders --> CardView[🗂️ Provider Card View]
+    CardView --> TabNavigation{Navigate Tabs}
+    TabNavigation -->|Overview| OverviewTab[📄 Overview Tab]
+    TabNavigation -->|Enrollments| EnrollmentsTab[💳 Enrollments Tab]
+    TabNavigation -->|Notes| NotesTab[📝 Notes Tab]
+    TabNavigation -->|Tasks| TasksTab[✅ Tasks Tab]
+    
+    EnrollmentsTab --> AccordionView[🗂️ Accordion View]
+    AccordionView --> ExpandGroup{Expand Payer Group}
+    ExpandGroup -->|Commercial| CommercialPayers[💼 Commercial Payers]
+    ExpandGroup -->|Medicare| MedicarePayers[🏥 Medicare]
+    ExpandGroup -->|Medicaid| MedicaidPayers[🏛️ Medicaid]
+    ExpandGroup -->|Other| OtherPayers[📋 Other Payers]
+    
+    Reports --> SelectReport{Select Report Type}
+    SelectReport -->|Provider Summary| ProviderReport[📊 Provider Summary]
+    SelectReport -->|Payer Enrollment| PayerReport[💳 Payer Enrollment]
+    SelectReport -->|Credentialing Status| CredentialReport[📋 Credentialing Status]
+    
+    ExportData --> GenerateCSV[📄 Generate CSV]
+    GenerateCSV --> Download[⬇️ Download File]
+    
+    SearchFilter --> ApplyFilters[🎯 Apply Filters]
+    ApplyFilters --> DisplayResults[📋 Display Results]
+    
+    SaveProvider --> Success{Success?}
+    Success -->|Yes| ShowSuccess[✅ Success Message]
+    Success -->|No| ShowError[❌ Error Message]
+    
+    SaveChanges --> Validate{Validate Data?}
+    Validate -->|Valid| UpdateDB[💾 Update Database]
+    Validate -->|Invalid| ValidationError[❌ Validation Error]
+    
+    UpdateDB --> RefreshView[🔄 Refresh View]
+    ShowSuccess --> RefreshView
+    
+    style Start fill:#e1f5fe
+    style AdminDash fill:#ffcdd2
+    style ManagerDash fill:#bbdefb
+    style ViewerDash fill:#f5f5f5
+    style UserMgmt fill:#fff9c4
+    style BlockChange fill:#ffebee
+    style UpdateRole fill:#c8e6c9
+    style SaveProvider fill:#c8e6c9
+    style ShowSuccess fill:#c8e6c9
+    style ShowError fill:#ffcdd2
+    style ValidationError fill:#ffcdd2
+

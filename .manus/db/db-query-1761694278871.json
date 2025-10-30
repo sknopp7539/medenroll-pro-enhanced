@@ -1,0 +1,90 @@
+{
+  "query": "SELECT id, openId, name, email, role, lastSignedIn FROM users LIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Vy9diodPy4g3MD.root --database CcMHBo8hRNDuEgWUygtZqP --execute SELECT id, openId, name, email, role, lastSignedIn FROM users LIMIT 10",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "Stachianna Knopp",
+      "email": "stacyknopp1@gmail.com",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:19:48"
+    },
+    {
+      "id": "2",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:19:48"
+    },
+    {
+      "id": "3",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:19:48"
+    },
+    {
+      "id": "4",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:19:51"
+    },
+    {
+      "id": "5",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:19:51"
+    },
+    {
+      "id": "6",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:20:03"
+    },
+    {
+      "id": "7",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:20:10"
+    },
+    {
+      "id": "8",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:20:10"
+    },
+    {
+      "id": "9",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:20:11"
+    },
+    {
+      "id": "10",
+      "openId": "LcytX9U6taU9WsUfYVf6vH",
+      "name": "NULL",
+      "email": "NULL",
+      "role": "admin",
+      "lastSignedIn": "2025-10-28 23:20:12"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\trole\tlastSignedIn\n1\tLcytX9U6taU9WsUfYVf6vH\tStachianna Knopp\tstacyknopp1@gmail.com\tadmin\t2025-10-28 23:19:48\n2\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:19:48\n3\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:19:48\n4\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:19:51\n5\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:19:51\n6\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:20:03\n7\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:20:10\n8\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:20:10\n9\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:20:11\n10\tLcytX9U6taU9WsUfYVf6vH\tNULL\tNULL\tadmin\t2025-10-28 23:20:12\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

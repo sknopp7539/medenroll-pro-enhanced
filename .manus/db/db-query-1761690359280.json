@@ -1,0 +1,25 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Vy9diodPy4g3MD.root --database CcMHBo8hRNDuEgWUygtZqP --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_CcMHBo8hRNDuEgWUygtZqP": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_CcMHBo8hRNDuEgWUygtZqP": "payerEnrollments"
+    },
+    {
+      "Tables_in_CcMHBo8hRNDuEgWUygtZqP": "practiceLocations"
+    },
+    {
+      "Tables_in_CcMHBo8hRNDuEgWUygtZqP": "providers"
+    },
+    {
+      "Tables_in_CcMHBo8hRNDuEgWUygtZqP": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_CcMHBo8hRNDuEgWUygtZqP\n__drizzle_migrations\npayerEnrollments\npracticeLocations\nproviders\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 699
+}

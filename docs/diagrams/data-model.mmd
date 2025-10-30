@@ -1,0 +1,91 @@
+erDiagram
+    USERS ||--o{ PROVIDERS : manages
+    PROVIDERS ||--o{ PRACTICE_LOCATIONS : has
+    PROVIDERS ||--o{ PAYER_ENROLLMENTS : has
+    PROVIDERS ||--o{ NOTES : has
+    PROVIDERS ||--o{ TASKS : has
+    USERS ||--o{ AUDIT_LOGS : creates
+    
+    USERS {
+        string id PK
+        string openId UK "OAuth identifier"
+        string name
+        string email
+        string loginMethod "google, github, etc"
+        enum role "viewer, manager, admin"
+        datetime createdAt
+        datetime updatedAt
+        datetime lastSignedIn
+    }
+    
+    PROVIDERS {
+        string id PK
+        string name
+        string credential "MD, DO, NP, PA, etc"
+        string npi "10-digit NPI"
+        string license
+        date licenseExpiration
+        enum specialty "Primary Care, Addiction, etc"
+        enum status "active, pending, inactive"
+        date nextCredentialing
+        boolean flagged "Flagged for recredentialing"
+        datetime createdAt
+        datetime updatedAt
+        string createdBy FK
+    }
+    
+    PRACTICE_LOCATIONS {
+        string id PK
+        string providerId FK
+        string name
+        string address
+        enum type "primary, secondary"
+        datetime createdAt
+    }
+    
+    PAYER_ENROLLMENTS {
+        string id PK
+        string providerId FK
+        string payerName
+        enum payerType "commercial, medicare, medicaid, other"
+        enum status "active, pending, inactive"
+        date enrollmentDate
+        date contractEnd
+        date nextCredentialing
+        text notes
+        datetime createdAt
+        datetime updatedAt
+    }
+    
+    NOTES {
+        string id PK
+        string providerId FK
+        text content
+        string createdBy FK
+        datetime createdAt
+        datetime updatedAt
+    }
+    
+    TASKS {
+        string id PK
+        string providerId FK
+        string title
+        text description
+        enum status "pending, in_progress, completed"
+        date dueDate
+        string assignedTo FK
+        datetime createdAt
+        datetime updatedAt
+    }
+    
+    AUDIT_LOGS {
+        string id PK
+        string userId FK
+        string entityType "user, provider, enrollment"
+        string entityId
+        enum action "create, update, delete, role_change"
+        json beforeData "State before change"
+        json afterData "State after change"
+        datetime timestamp
+    }
+
