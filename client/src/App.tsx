@@ -10,11 +10,17 @@ import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import UserManagement from "./pages/UserManagement";
+import Payers from "./pages/Payers";
+import ReviewerDashboard from "./pages/ReviewerDashboard";
+import ReviewQueue from "./pages/ReviewQueue";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/payers" component={Payers} />
+      <Route path="/reviewer-dashboard" component={ReviewerDashboard} />
+      <Route path="/review-queue" component={ReviewQueue} />
       <Route path="/reports" component={Reports} />
       <Route path="/settings" component={Settings} />
       <Route path="/users" component={UserManagement} />
