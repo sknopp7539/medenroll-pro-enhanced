@@ -1,4 +1,3 @@
-// redeploy
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -7,16 +6,13 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ProviderProvider } from "./contexts/ProviderContext";
 
-// PAGES (these files already exist per your summary)
+// PAGES that currently exist
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import UserManagement from "./pages/UserManagement";
-import Payers from "./pages/Payers";
-import ReviewerDashboard from "./pages/ReviewerDashboard";
-import ReviewQueue from "./pages/ReviewQueue";
 
-// NEW: use the correct layout with the 7-item nav
+// Use the correct layout (7-item sidebar already lives inside it)
 import DashboardLayout from "@/components/DashboardLayout";
 
 function Router() {
@@ -24,9 +20,6 @@ function Router() {
     <DashboardLayout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/payers" component={Payers} />
-        <Route path="/reviewer-dashboard" component={ReviewerDashboard} />
-        <Route path="/review-queue" component={ReviewQueue} />
         <Route path="/reports" component={Reports} />
         <Route path="/settings" component={Settings} />
         <Route path="/users" component={UserManagement} />
