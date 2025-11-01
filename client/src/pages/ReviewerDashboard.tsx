@@ -5,7 +5,7 @@ export default function ReviewerDashboard() {
     <DashboardLayout>
       <div className="p-6">
         <h1 className="text-2xl font-semibold">Reviewer Dashboard</h1>
-        <p className="text-gray-600">Coming soon.</p>
+        <p className="text-gray-600">This is a placeholder. Replace with your real page when ready.</p>
       </div>
     </DashboardLayout>
   );
