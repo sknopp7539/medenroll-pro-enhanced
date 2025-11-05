@@ -1,4 +1,5 @@
-{
+{"@trpc/server": "^10.45.2",
+
   "name": "medenroll-pro-enhanced",
   "version": "1.0.0",
   "type": "module",
